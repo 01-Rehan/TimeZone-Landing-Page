@@ -5,8 +5,8 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full h-16 bg-zinc-900  px-6 sm:px-16 flex items-center justify-between">
-        <div className="text-white">
+      <nav className="w-full h-16 bg-zinc-900  px-6 sm:px-16 flex items-center justify-between z-50">
+        <div className="text-white text-2xl">
           Time
           <span className="text-red-600"> Zone</span>
         </div>
