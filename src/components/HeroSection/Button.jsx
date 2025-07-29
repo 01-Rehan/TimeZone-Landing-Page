@@ -1,9 +1,12 @@
-export const Button = ({color,text,textColor}) =>{
-    return (
+export const Button = ({ config }) => {
+  const { bgcolor, text, textColor } = config;
 
-        <button className={`w-40 h-12 border m-2.5 border-white bg-${color} rounded-xl text-${textColor}`}>
-            {text}
-        </button>
-
-    )
-}
+  return (
+    <button
+      className="w-40 h-12 border m-2.5 border-white rounded-xl hover:scale-105 transition"
+      style={{ backgroundColor: bgcolor, color: textColor }}
+    >
+      {text}
+    </button>
+  );
+};
