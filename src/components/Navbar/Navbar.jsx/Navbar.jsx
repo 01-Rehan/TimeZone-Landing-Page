@@ -45,7 +45,7 @@ export const Navbar = () => {
             />
           </span>
           <span className="hamburger block sm:hidden" onClick={() => setNavOption(!isMenuOpen)}>
-            <svg class="w-6 h-5 text-white fill-current" viewBox="0 0 130 50">
+            <svg class="w-6 h-5 text-white fill-current" viewBox="-15 0 130 50">
               <rect width="90" height="10"></rect>
               <rect y="30" width="90" height="10"></rect>
               <rect y="60" width="90" height="10"></rect>
@@ -58,7 +58,7 @@ export const Navbar = () => {
       <div
         className={`Nav-Options ${
           isMenuOpen ? "block" : "hidden"
-        } sm:hidden bg-zinc-800 w-full text-white`}
+        } absolute z-10 sm:hidden bg-zinc-800 w-full text-white`}
       >
         <ul className="flex flex-col p-4 gap-6  justify-between  ">
           <li>Home</li>
