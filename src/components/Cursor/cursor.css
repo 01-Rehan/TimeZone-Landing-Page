@@ -1,0 +1,5 @@
+.MouseCursor {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
