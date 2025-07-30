@@ -9,7 +9,7 @@ export const CursorEffect = () => {
 
   return (
     <motion.div
-      className="MouseCursor fixed  w-5 h-5 hidden sm:block bg-white rounded-full pointer-events-none z-10 mix-blend-difference"
+      className="MouseCursor fixed  w-5 h-5 hidden sm:block bg-white rounded-full pointer-events-none z-100 mix-blend-difference"
       style={{
         x,
         y,
