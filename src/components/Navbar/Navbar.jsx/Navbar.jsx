@@ -20,9 +20,9 @@ export const Navbar = () => {
   }, []);
 
   const navIconsImage = [
-    "/assets/SVGs/Icons/search-01.svg",
-    "/assets/SVGs/Icons/user-circle.svg",
-    "/assets/SVGs/Icons/shopping-cart-01.svg",
+    "./assets/SVGs/Icons/search-01.svg",
+    "./assets/SVGs/Icons/user-circle.svg",
+    "./assets/SVGs/Icons/shopping-cart-01.svg",
   ];
   const navIconRefs = useRef(navIconsImage.map(() => createRef()));
   useEffect(() => {
