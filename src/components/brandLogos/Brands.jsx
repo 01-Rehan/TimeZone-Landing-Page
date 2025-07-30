@@ -1,10 +1,10 @@
 export const Brands = () => {
   const BrandLogos = [
-    "/assets/SVG's/Brands/Ap.svg",
-    "/assets/SVG's/Brands/HUBLOT.svg",
-    "/assets/SVG's/Brands/OMEGAsvg.svg",
-    "/assets/SVG's/Brands/PATEKphilipee.svg",
-    "/assets/SVG's/Brands/Rolex.svg",
+    "/assets/SVGs/Brands/Ap.svg",
+    "/assets/SVGs/Brands/HUBLOT.svg",
+    "/assets/SVGs/Brands/OMEGAsvg.svg",
+    "/assets/SVGs/Brands/PATEKphilipee.svg",
+    "/assets/SVGs/Brands/Rolex.svg",
   ];
 
   return (
