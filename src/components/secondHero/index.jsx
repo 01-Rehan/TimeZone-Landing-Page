@@ -1,4 +1,4 @@
-import Image from "../../assets/undefined.png";
+import Image from "/assets/undefined.png";
 import { motion } from "motion/react";
 
 export const SecondHero = () => {
