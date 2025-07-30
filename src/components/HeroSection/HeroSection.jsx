@@ -1,21 +1,9 @@
 import heroImage from "../../assets/image.jpg";
 import { Button } from "./Button";
 import { motion, inView } from "motion/react";
-import { forwardRef, useRef, useEffect } from "react";
-import { useCursorEffect } from "../../contexts/onMouseEffectContext";
 
 const HeroSection = () => {
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const { registerHoverRef } = useCursorEffect();
-
-  useEffect(() => {
-    if (ref1.current) registerHoverRef(ref1.current);
-    if (ref2.current) registerHoverRef(ref2.current);
-  },[]);
-
-  
-
+ 
   return (
     <section className="HeroSection relative w-full h-max ">
       <div className="img w-full h-screen xl:h-max overflow-hidden bg-black">
@@ -67,14 +55,8 @@ const HeroSection = () => {
             </span>
           </div>
           <div className="heroButtons  full flex justify-center  ">
+            <Button  text="Shop Now" bgcolor="#ffffff" textColor="#000000" />
             <Button
-              ref={ref1}
-              text="Shop Now"
-              bgcolor="#ffffff"
-              textColor="#000000"
-            />
-            <Button
-              ref={ref2}
               text="New Collection"
               bgcolor="#000000"
               textColor="#ffffff"

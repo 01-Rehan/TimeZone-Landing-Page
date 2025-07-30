@@ -1,8 +1,8 @@
 import { motion } from "motion/react"
 
-export const ProductCard = ({image,name}) => {
+export const ProductCard =({image,name}) => {
     return (
-        <motion.div 
+        <motion.div
         initial={{
           opacity :0
         }}
@@ -22,4 +22,4 @@ export const ProductCard = ({image,name}) => {
                 <span className="h-6">{name}</span>
         </motion.div>
     )
-}
+};

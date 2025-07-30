@@ -6,11 +6,12 @@ import { Brands } from "./components/brandLogos/Brands";
 import { Items } from "./components/ItemsSection/items";
 import { SecondHero } from "./components/secondHero";
 import { FooterComponent } from "./components/footer/footer";
-import { motion } from "motion/react";
+import { CursorEffect } from "./components/Cursor/cursor";
 
 const App = () => {
   return (
     <>
+    <CursorEffect />
         <Navbar />
         <HeroSection />
         <Brands />

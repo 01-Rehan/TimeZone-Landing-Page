@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { ProductCard } from "./Productcard";
 
 export const Items = () => {
+
   return (
     <section className="ItemsSection-Container w-scree h-max bg-black  text-white flex flex-wrap justify-center pt-10 pb-10">
       <motion.div 
