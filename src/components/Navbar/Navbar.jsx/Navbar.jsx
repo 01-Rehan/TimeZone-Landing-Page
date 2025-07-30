@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, createRef } from "react";
 import { useCursorEffect } from "../../../contexts/onMouseEffectContext";
 import { motion } from "motion/react";
+import Icon from "/assets/SVGs/Icons/search-01.svg";
 
 export const Navbar = () => {
   const [isMenuOpen, setNavOption] = useState(false);
@@ -20,7 +21,8 @@ export const Navbar = () => {
   }, []);
 
   const navIconsImage = [
-    "/assets/SVGs/Icons/search-01.svg",
+    // "/assets/SVGs/Icons/search-01.svg",
+    Icon,
     "/assets/SVGs/Icons/user-circle.svg",
     "/assets/SVGs/Icons/shopping-cart-01.svg",
   ];
