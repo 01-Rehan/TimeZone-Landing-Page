@@ -6,4 +6,16 @@ export default defineConfig({
   plugins: [
     react(),tailwindcss(),
   ],
+  base: '/TimeZone-Landing-Page/',
+   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'framer-motion': ['framer-motion']
+        }
+      }
+    }
+  }
 })
