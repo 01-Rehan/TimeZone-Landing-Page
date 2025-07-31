@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 ("use client");
 import useMousePosition from "../../utils/onMousePosition";
 import { useCursorEffect } from "../../contexts/onMouseEffectContext";

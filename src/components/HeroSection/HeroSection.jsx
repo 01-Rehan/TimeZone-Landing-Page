@@ -1,6 +1,6 @@
 import heroImage from "/assets/image.jpg";
 import { Button } from "./Button";
-import { motion, inView } from "motion/react";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
  

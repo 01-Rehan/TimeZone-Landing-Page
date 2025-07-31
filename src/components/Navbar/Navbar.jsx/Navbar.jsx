@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, createRef } from "react";
 import { useCursorEffect } from "../../../contexts/onMouseEffectContext";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 export const Navbar = () => {
   const [isMenuOpen, setNavOption] = useState(false);

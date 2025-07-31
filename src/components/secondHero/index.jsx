@@ -1,5 +1,5 @@
 import Image from "/assets/undefined.png";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 export const SecondHero = () => {
   return (

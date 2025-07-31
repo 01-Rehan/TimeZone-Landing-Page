@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { hover, springValue, useMotionValue, useSpring } from "motion/react";
+import {  useMotionValue, useSpring } from "framer-motion";
 
 export default function useMousePosition({ hoverRefs }) {
   const y = useMotionValue(-100);
