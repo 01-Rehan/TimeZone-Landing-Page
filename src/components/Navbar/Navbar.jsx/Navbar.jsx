@@ -53,7 +53,7 @@ export const Navbar = () => {
 
         <div className="Nav-Icons flex gap-4">
           {navIconsImage.map((image, index) => (
-            <span className="searchIcon relative w-7 h-7 mix-blend-difference" >
+            <span className="searchIcon relative w-7 h-7 mix-blend-difference" key={index} >
               <div className="absolute bounde w-full h-full hover:scale-150 " ref={navIconRefs.current[index]} />
               <img
                 src={image}

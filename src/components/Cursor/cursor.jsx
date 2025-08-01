@@ -5,7 +5,7 @@ import { useCursorEffect } from "../../contexts/onMouseEffectContext";
 
 export const CursorEffect = () => {
   const { hoverRefs } = useCursorEffect();
-  const { x, y, cursorSize } = useMousePosition({ hoverRefs });
+  const { x, y, cursorSize,scale } = useMousePosition({ hoverRefs });
 
   return (
     <motion.div
@@ -13,6 +13,9 @@ export const CursorEffect = () => {
       style={{
         x,
         y,
+        scale, // Apply the squeeze effect
+        width: cursorSize,
+        height: cursorSize,
       }}
       animate={{
         width: cursorSize,
