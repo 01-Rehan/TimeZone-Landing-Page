@@ -6,8 +6,33 @@ const HeroSection = () => {
  
   return (
     <section className="HeroSection relative w-full h-max ">
-      <div className="img w-full h-screen xl:h-max overflow-hidden bg-black">
-        <motion.img
+      <div className="img w-full h-screen overflow-hidden bg-black">
+
+       {/* The Hero Section Video */}
+       <motion.video
+        className="background-video w-full h-full object-cover z-0"
+        autoPlay
+        muted
+        loop
+        playsInline
+        initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+          }}
+      >
+        <source src="public/assets/Videos/9965968-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </motion.video>
+
+
+        {/* The Hero Section Image (Optional) */}
+
+        {/* <motion.img
           initial={{
             scale: 1,
             opacity: 0,
@@ -22,8 +47,8 @@ const HeroSection = () => {
           src={heroImage}
           alt="Herobackground"
           className=" w-full h-full object-cover z-0"
-        />
-      </div>
+        /> */}
+      </div> 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-160 bg-gradient-to-t from-black to-transparent"></div>
       <div className="HeroContent-MainContainer w-full h-2/5 absolute  bottom-0 flex items-center justify-center ">
         <motion.div

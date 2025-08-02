@@ -5,17 +5,15 @@ import { useCursorEffect } from "../../contexts/onMouseEffectContext";
 
 export const CursorEffect = () => {
   const { hoverRefs } = useCursorEffect();
-  const { x, y, cursorSize,scale } = useMousePosition({ hoverRefs });
+  const { x, y, cursorSize, scale } = useMousePosition({ hoverRefs });
 
   return (
     <motion.div
-      className="MouseCursor fixed  w-5 h-5 hidden sm:block bg-white rounded-full pointer-events-none z-100 mix-blend-difference"
+      className="MouseCursor hidden sm:fixed  w-5 h-5 sm:block bg-white rounded-full pointer-events-none z-100 mix-blend-difference"
       style={{
         x,
         y,
-        scale, // Apply the squeeze effect
-        width: cursorSize,
-        height: cursorSize,
+        scale,
       }}
       animate={{
         width: cursorSize,

@@ -5,10 +5,6 @@ import { motion } from "framer-motion";
 export const Navbar = () => {
   const [isMenuOpen, setNavOption] = useState(false);
 
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const ref3 = useRef(null);
-
   const { registerHoverRef } = useCursorEffect();
 
   const navItems = ["Home", "Shop", "About", "Blog", "Contact"];
@@ -43,8 +39,14 @@ export const Navbar = () => {
         <div className=" hidden md:block Nav-Options w-80 text-white">
           <motion.ul className="flex justify-between gap-8">
             {navItems.map((item, index) => (
-              <motion.li key={item} className="h-max w-max relative flex justify-center items-center" >
-                <div className="absolute bounde w-full h-full hover:scale-150 " ref={navRefs.current[index]} />
+              <motion.li
+                key={item}
+                className="h-max w-max relative flex justify-center items-center"
+              >
+                <div
+                  className="absolute bounde w-full h-full hover:scale-150 "
+                  ref={navRefs.current[index]}
+                />
                 {item}
               </motion.li>
             ))}
@@ -53,14 +55,19 @@ export const Navbar = () => {
 
         <div className="Nav-Icons flex gap-4">
           {navIconsImage.map((image, index) => (
-            <span className="searchIcon relative w-7 h-7 mix-blend-difference" key={index} >
-              <div className="absolute bounde w-full h-full hover:scale-150 " ref={navIconRefs.current[index]} />
+            <span
+              className="searchIcon relative w-7 h-7 mix-blend-difference"
+              key={index}
+            >
+              <div
+                className="absolute bounde w-full h-full hover:scale-150 "
+                ref={navIconRefs.current[index]}
+              />
               <img
                 src={image}
                 className=" w-full h-full pointer-events-none"
                 alt=""
               />
-
             </span>
           ))}
 
@@ -83,13 +90,11 @@ export const Navbar = () => {
           isMenuOpen ? "block" : "hidden"
         } absolute z-10 sm:hidden bg-zinc-800 w-full text-white`}
       >
-        <ul className="flex flex-col p-4 gap-6  justify-between  ">
-          <li>Home</li>
-          <li>Shop</li>
-          <li>About</li>
-          <li>Blog</li>
-          <li>Contact</li>
-        </ul>
+        <motion.ul className="flex flex-col p-4 gap-6  justify-between">
+          {navItems.map((item, index) => (
+            <li key={item}>{item}</li>
+          ))}
+        </motion.ul>
       </div>
     </>
   );
