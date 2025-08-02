@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, createRef } from "react";
 import { useCursorEffect } from "../../../contexts/onMouseEffectContext";
 import { motion } from "framer-motion";
+import { Link, NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   const [isMenuOpen, setNavOption] = useState(false);
@@ -36,19 +37,28 @@ export const Navbar = () => {
         </div>
 
         {/* Options for DeskTop  */}
-        <div className=" hidden md:block Nav-Options w-80 text-white">
+        <div className=" hidden md:block Nav-Options w-max text-white">
           <motion.ul className="flex justify-between gap-8">
             {navItems.map((item, index) => (
-              <motion.li
-                key={item}
-                className="h-max w-max relative flex justify-center items-center"
+              <NavLink
+                to={
+                  item.toLowerCase() === "home" ? "/" : `/${item.toLowerCase()}`
+                }
+                className={({ isActive }) =>
+                  `${isActive ? "border-b-3 border-red-700" : ""}`
+                }
               >
-                <div
-                  className="absolute bounde w-full h-full hover:scale-150 "
-                  ref={navRefs.current[index]}
-                />
-                {item}
-              </motion.li>
+                <motion.li
+                  key={item}
+                  className=" `h-max w-max relative flex justify-center items-center p-1 "
+                >
+                  <div
+                    className="absolute bounde w-full h-full hover:scale-150 "
+                    ref={navRefs.current[index]}
+                  />
+                  {item}
+                </motion.li>
+              </NavLink>
             ))}
           </motion.ul>
         </div>
@@ -92,7 +102,18 @@ export const Navbar = () => {
       >
         <motion.ul className="flex flex-col p-4 gap-6  justify-between">
           {navItems.map((item, index) => (
-            <li key={item}>{item}</li>
+            <NavLink
+              to={
+                item.toLowerCase() === "home" ? "/" : `/${item.toLowerCase()}`
+              }
+              className={({ isActive }) =>
+                ` p-1 ${isActive ? "border-b-3 border-red-700" : ""}`
+              }
+            >
+              <li key={item} className="">
+                {item}
+              </li>
+            </NavLink>
           ))}
         </motion.ul>
       </div>

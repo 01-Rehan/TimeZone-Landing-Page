@@ -3,32 +3,39 @@ import { Button } from "./Button";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
- 
   return (
     <section className="HeroSection relative w-full h-max ">
       <div className="img w-full h-screen overflow-hidden bg-black">
-
-       {/* The Hero Section Video */}
-       <motion.video
-        className="background-video w-full h-full object-cover z-0"
-        autoPlay
-        muted
-        loop
-        playsInline
-        initial={{
+        {/* The Hero Section Video */}
+        <motion.video
+          className="background-video w-full h-full object-cover z-0"
+          preload="none"
+          autoPlay
+          muted
+          loop
+          playsInline
+          initial={{
             opacity: 0,
           }}
           animate={{
             opacity: 1,
           }}
           transition={{
-            duration: 1,
+            duration: 2,
           }}
-      >
-        <source src="public/assets/Videos/9965968-uhd_3840_2160_25fps.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </motion.video>
-
+        >
+          <source
+            src="public/assets/Videos/9965968-hd_1280_720_50fps.mp4"
+            type="video/mp4"
+            media="(max-width: 768px)"
+          />
+          <source
+            src="public/assets/Videos/9965968-hd_1920_1080_25fps.mp4"
+            type="video/mp4"
+            media="(min-width: 769px)"
+          />
+          Your browser does not support the video tag.
+        </motion.video>
 
         {/* The Hero Section Image (Optional) */}
 
@@ -48,8 +55,8 @@ const HeroSection = () => {
           alt="Herobackground"
           className=" w-full h-full object-cover z-0"
         /> */}
-      </div> 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-160 bg-gradient-to-t from-black to-transparent"></div>
+      </div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-150 sm:h-110 bg-gradient-to-t from-black to-transparent"></div>
       <div className="HeroContent-MainContainer w-full h-2/5 absolute  bottom-0 flex items-center justify-center ">
         <motion.div
           initial={{
@@ -80,7 +87,7 @@ const HeroSection = () => {
             </span>
           </div>
           <div className="heroButtons  full flex justify-center  ">
-            <Button  text="Shop Now" bgcolor="#ffffff" textColor="#000000" />
+            <Button text="Shop Now" bgcolor="#ffffff" textColor="#000000" />
             <Button
               text="New Collection"
               bgcolor="#000000"
