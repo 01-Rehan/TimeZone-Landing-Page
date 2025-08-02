@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 export const SecondHero = () => {
   return (
-    <section className="h-180 opac relative overflow-hidden ">
-      <div className="image  h-full  bg-black">
+    <section className="h-180 opacity-95 relative overflow-hidden ">
+      <div className="image h-full  bg-black">
         <motion.img
           initial={{
             scale: 1.1,

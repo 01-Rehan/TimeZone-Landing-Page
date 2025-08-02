@@ -4,16 +4,21 @@ import { About } from "../pages/about/About";
 import { Shop } from "../pages/shop/Shop";
 import { Contact } from "../pages/contact/Contact";
 import { Blog } from "../pages/blog/Blog";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import Inner from "../utils/Inner";
 
 export const AppRouter = () => {
+  const location = useLocation();
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/shop" element={<Shop />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/blog" element={<Blog />} />
-    </Routes>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Inner><Home /></Inner>} />
+        <Route path="/about" element={<Inner><About /></Inner>} />
+        <Route path="/shop" element={<Inner><Shop /></Inner>} />
+        <Route path="/contact" element={<Inner><Contact /></Inner>} />
+        <Route path="/blog" element={<Inner><Blog /></Inner>} />
+      </Routes>
+    </AnimatePresence>
   );
 };

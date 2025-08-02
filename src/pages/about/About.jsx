@@ -1,7 +1,8 @@
-import React from 'react'
+import React from "react";
+import { SecondHero } from "../../components/secondHero";
 
 export const About = () => {
   return (
-    <div>About</div>
-  )
-}
+      <SecondHero />
+  );
+};

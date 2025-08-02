@@ -1,0 +1,12 @@
+.inner{
+    background-color: black;
+}
+.slide{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:#000000;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}

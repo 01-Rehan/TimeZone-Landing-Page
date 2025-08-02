@@ -11,7 +11,7 @@ const App = () => {
     <>
       <CursorEffect />
       <Navbar />
-      <AppRouter />
+        <AppRouter />
       <FooterComponent />
     </>
   );

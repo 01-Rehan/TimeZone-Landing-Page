@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, createRef } from "react";
 import { useCursorEffect } from "../../../contexts/onMouseEffectContext";
 import { motion, AnimatePresence } from "framer-motion";
-import Hamburger from 'hamburger-react'
+import Hamburger from "hamburger-react";
 import { Link, NavLink } from "react-router-dom";
 
 export const Navbar = () => {
@@ -31,7 +31,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full h-16 bg-zinc-900  px-4 sm:px-16 flex items-center justify-between z-50">
+      <nav className="w-full h-16 bg-black  px-4 sm:px-16 flex items-center justify-between z-50">
         <div className="text-white text-2xl">
           Time
           <span className="text-red-600"> Zone</span>
@@ -46,17 +46,35 @@ export const Navbar = () => {
                 to={
                   item.toLowerCase() === "home" ? "/" : `/${item.toLowerCase()}`
                 }
-                className={({ isActive }) =>
-                  `${isActive ? "border-b-3 border-red-700" : ""}`
-                }
               >
-                <motion.li className=" `h-max w-max relative flex justify-center items-center p-1 ">
-                  <div
-                    className="absolute bounde w-full h-full hover:scale-150 "
-                    ref={navRefs.current[index]}
-                  />
-                  {item}
-                </motion.li>
+                {({ isActive }) => (
+                  <motion.li
+                    className=" h-max w-max relative flex justify-center items-center p-1 "
+                    initial={false}
+                    animate={{
+                      scale: isActive ? 1.1 : 1,
+                      color: isActive ? "#e00700" : "#ffffff",
+                    }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div
+                      className="absolute bounde w-full h-full hover:scale-150 "
+                      ref={navRefs.current[index]}
+                    />
+                    {item}
+                    <motion.div
+                        layout
+                        className="absolute  bottom-0  h-[2px] bg-red-700 rounded-full"
+                        initial={{ width: 0, opacity: 0 }}
+                        animate={
+                          isActive
+                            ? { width: "100%", opacity: 1 }
+                            : { width: 0, opacity: 0 }
+                        }
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                      />
+                  </motion.li>
+                )}
               </NavLink>
             ))}
           </motion.ul>
@@ -97,7 +115,7 @@ export const Navbar = () => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ duration: 0.5, type: "spring" }}
-            className={` absolute w-screen  z-10 sm:hidden flex flex-row-reverse p-1 origin-top-right`}
+            className={` absolute w-screen z-1 md:hidden flex flex-row-reverse p-1 origin-top-right`}
           >
             <ul className="flex w-[75%] relative flex-col p-4 gap-6 justify-between bg-zinc-800 text-white rounded-xl ">
               {navItems.map((item, index) => (
@@ -108,11 +126,31 @@ export const Navbar = () => {
                       ? "/"
                       : `/${item.toLowerCase()}`
                   }
-                  className={({ isActive }) =>
-                    ` py-1 ${isActive ? "border-b-[3px] border-red-700" : ""}`
-                  }
                 >
-                  <li>{item}</li>
+                  {({ isActive }) => (
+                    <motion.li
+                      className=" h-max w-full relative flex  items-center p-1 "
+                      initial={false}
+                      animate={{
+                        scale: isActive ? 1.01 : 1,
+                        color: isActive ? "#e00700" : "#ffffff",
+                      }}
+                      transition={{ type: "spring", stiffness: 100 }}
+                    >
+                      {item}
+                      <motion.div
+                        layout
+                        className="absolute  bottom-0 left-0 h-[2px] bg-red-700 rounded-full"
+                        initial={{ width: 0, opacity: 0 }}
+                        animate={
+                          isActive
+                            ? { width: "100%", opacity: 1 }
+                            : { width: 0, opacity: 0 }
+                        }
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                      />
+                    </motion.li>
+                  )}
                 </NavLink>
               ))}
             </ul>

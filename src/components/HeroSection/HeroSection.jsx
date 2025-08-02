@@ -1,14 +1,15 @@
-import heroImage from "/assets/image.jpg";
+import heroImage from "/assets/1754134551491.png";
 import { Button } from "./Button";
 import { motion } from "framer-motion";
 
+
 const HeroSection = () => {
   return (
-    <section className="HeroSection relative w-full h-max ">
-      <div className="img w-full h-screen overflow-hidden bg-black">
+    <section className="HeroSection relative w-full h-[90vh] sm:h-[100vh]   ">
+      <div className="img w-full h-full overflow-hidden bg-black flex items-center justify-center">
         {/* The Hero Section Video */}
         <motion.video
-          className="background-video w-full h-full object-cover z-0"
+          className="background-video w-full h-full object-cover "
           preload="none"
           autoPlay
           muted
@@ -25,17 +26,34 @@ const HeroSection = () => {
           }}
         >
           <source
-            src="public/assets/Videos/9965968-hd_1280_720_50fps.mp4"
+            src="/9965968-hd_1280_720_50fps.mp4"
             type="video/mp4"
-            media="(max-width: 768px)"
+            // media="(max-width: 768px)"
           />
-          <source
-            src="public/assets/Videos/9965968-hd_1920_1080_25fps.mp4"
+          {/* <source
+            src="/9965968-hd_1920_1080_25fps.mp4"
             type="video/mp4"
             media="(min-width: 769px)"
-          />
+          /> */}
           Your browser does not support the video tag.
         </motion.video>
+         <motion.img
+          initial={{
+            scale: 1,
+          }}
+          animate={{
+            scale: 1.03,
+          }}
+          transition={{
+            duration: 1,
+          }}
+          src={heroImage}
+          alt="Herobackground"
+          className=" absolute w-[97vw] sm:w-auto sm:h-10/12 "
+        />
+        <img src="/assets/SVGs/Ellipse.svg" alt="Ellipse" className="absolute 180 h-180 opacity-70" />
+
+
 
         {/* The Hero Section Image (Optional) */}
 
@@ -55,6 +73,8 @@ const HeroSection = () => {
           alt="Herobackground"
           className=" w-full h-full object-cover z-0"
         /> */}
+
+
       </div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-150 sm:h-110 bg-gradient-to-t from-black to-transparent"></div>
       <div className="HeroContent-MainContainer w-full h-2/5 absolute  bottom-0 flex items-center justify-center ">
