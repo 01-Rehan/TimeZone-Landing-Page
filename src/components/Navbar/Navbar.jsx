@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, createRef } from "react";
-import { useCursorEffect } from "../../../contexts/onMouseEffectContext";
+import { useCursorEffect } from "../../contexts/onMouseEffectContext";
 import { motion, AnimatePresence } from "framer-motion";
 import Hamburger from "hamburger-react";
 import { Link, NavLink } from "react-router-dom";

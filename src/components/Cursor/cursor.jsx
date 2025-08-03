@@ -1,5 +1,5 @@
+"use client";
 import { motion } from "framer-motion";
-("use client");
 import useMousePosition from "../../utils/onMousePosition";
 import { useCursorEffect } from "../../contexts/onMouseEffectContext";
 
@@ -9,7 +9,7 @@ export const CursorEffect = () => {
 
   return (
     <motion.div
-      className="MouseCursor hidden md:fixed  w-5 h-5 md:block bg-white rounded-full pointer-events-none z-10 mix-blend-difference"
+      className="MouseCursor hidden md:fixed  md:block bg-white rounded-full pointer-events-none z-50 mix-blend-difference"
       style={{
         x,
         y,

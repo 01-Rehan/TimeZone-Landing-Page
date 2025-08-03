@@ -231,7 +231,7 @@ export default function WatchFilter({ onFilterChange }) {
 
         {/* Slide Down Container */}
         <div
-          className={`transition-all duration-500 ease-in-out overflow-hidden ${
+          className={`transition-all duration-500 ease-in-out overflow-hidden bg-black ${
             isOpen ? "max-h-auto" : "max-h-0"
           }`}
         >

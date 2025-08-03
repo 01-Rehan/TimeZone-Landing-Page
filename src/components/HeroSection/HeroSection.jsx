@@ -22,10 +22,10 @@ const HeroSection = () => {
           }}
           src={heroImage}
           alt="Herobackground"
-          className=" absolute w-[97vw] sm:w-auto sm:h-10/12 "
+          className=" absolute w-[90vw] sm:w-auto sm:h-10/12 "
         />
         <img
-          src="/assets/SVGs/Ellipse.svg"
+          src="/TimeZone-Landing-Page/assets/SVGs/Ellipse.svg"
           alt="Ellipse"
           className="absolute 180 h-180 opacity-70"
         />
