@@ -31,7 +31,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full h-16 bg-black  px-4 sm:px-16 flex items-center justify-between z-50">
+      <nav className="w-full h-16 bg-black  px-4 sm:px-16 flex items-center justify-between z-20">
         <div className="text-white text-2xl">
           Time
           <span className="text-red-600"> Zone</span>
@@ -115,7 +115,7 @@ export const Navbar = () => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ duration: 0.5, type: "spring" }}
-            className={` absolute w-screen z-1 md:hidden flex flex-row-reverse p-1 origin-top-right`}
+            className={` absolute w-screen z-20 md:hidden flex flex-row-reverse p-1 origin-top-right`}
           >
             <ul className="flex w-[75%] relative flex-col p-4 gap-6 justify-between bg-zinc-800 text-white rounded-xl ">
               {navItems.map((item, index) => (

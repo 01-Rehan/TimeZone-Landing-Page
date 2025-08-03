@@ -34,7 +34,7 @@ export const Blog = () => {
       <h1 className="text-4xl text-white font-bold mb-4">
         The TimeZone Journal
       </h1>
-      <p className="text-gray-400 text-lg max-w-xl mx-auto">
+      <p className="text-gray-400 text-lg max-w-xl mx-auto px-2">
         Explore insights, stories, and guides from the world of luxury
         timekeeping.
       </p>
@@ -44,35 +44,35 @@ export const Blog = () => {
         {/* Featured Article */}
         {featuredPost && (
           <section className="mb-16">
-            <div className="relative overflow-hidden w-full rounded-2xl bg-gradient-to-r from-white  border ">
+            <div className="relative overflow-hidden w-full rounded-2xl bg-gradient-to-r from-red-500/40 to-75% border ">
               <div className="grid lg:grid-cols-2 gap-8 p-8">
                 <div className="space-y-6">
                   <div className="flex items-center space-x-2">
                     <span className="px-3 py-1 bg-black text-white text-sm font-medium rounded-full border border-amber-500/30">
                       Featured
                     </span>
-                    <span className="text-black text-sm">{featuredPost.category}</span>
+                    <span className="text-white text-sm">{featuredPost.category}</span>
                   </div>
                   
-                  <h2 className="text-4xl font-bold leading-tight">
+                  <h2 className="text-4xl text-white font-bold leading-tight">
                     {featuredPost.title}
                   </h2>
                   
-                  <p className="text-black text-lg leading-relaxed">
+                  <p className="text-white text-lg leading-relaxed">
                     {featuredPost.excerpt}
                   </p>
                   
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between flex-wrap gap-5 sm:gap-4">
                     <div className="flex items-center space-x-3">
-                      <User className="w-5 h-5 text-black" />
-                      <span className="text-black">{featuredPost.author}</span>
-                      <span className="text-black">•</span>
-                      <span className="text-black">{featuredPost.date}</span>
-                      <span className="text-black">•</span>
-                      <span className="text-black">{featuredPost.readTime}</span>
+                      <User className="w-5 h-5 text-white" />
+                      <span className="text-white">{featuredPost.author}</span>
+                      <span className="text-white">•</span>
+                      <span className="text-white">{featuredPost.date}</span>
+                      <span className="text-white">•</span>
+                      <span className="text-white">{featuredPost.readTime}</span>
                     </div>
                     
-                    <button className="flex items-center space-x-2 bg-black text-white hover:bg-gray-900 px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
+                    <button className="flex items-center space-x-2 bg-black text-white hover:bg-gray-900 px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ">
                       <span>Read Article</span>
                       <ArrowRight className="w-4 h-4" />
                     </button>
@@ -83,9 +83,9 @@ export const Blog = () => {
                   <img
                     src={featuredPost.image}
                     alt={featuredPost.title}
-                    className="w-full h-80 object-cover rounded-xl shadow-2xl"
+                    className="w-full h-max sm:h-90 object-cover rounded-xl"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl"></div>
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl"></div> */}
                 </div>
               </div>
             </div>
@@ -189,7 +189,7 @@ export const Blog = () => {
               placeholder="Enter your email"
               className="flex-1 px-4 py-3 bg-black border border-white rounded-lg text-amber-100"
             />
-            <button className="bg-white hover:bg-amber-500 text-black px-6 py-3 rounded-lg font-medium transition-colors">
+            <button className="bg-white hover:bg-red-600/70 text-black hover:text-white px-6 py-3 rounded-lg font-medium transition-colors">
               Subscribe
             </button>
           </div>
