@@ -5,7 +5,6 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
-    base : "/TimeZone-Landing-Page/",
     outDir: "dist",
   },
 });
