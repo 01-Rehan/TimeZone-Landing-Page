@@ -3,9 +3,9 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  base: '/TimeZone-Landing-Page/',
   plugins: [react(), tailwindcss()],
   build: {
-    base: '/TimeZone-Landing-Page/',
     outDir: "dist",
   },
 });
