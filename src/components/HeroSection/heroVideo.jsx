@@ -23,7 +23,7 @@ const HeroVideo = () => {
         }}
       >
         <source
-          src="/9965968-hd_1280_720_50fps.mp4"
+          src="/TimeZone-Landing-Page/9965968-hd_1280_720_50fps.mp4"
           type="video/mp4"
           // media="(max-width: 768px)"
         />
