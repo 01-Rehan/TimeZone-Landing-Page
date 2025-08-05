@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "brand": "Rolex",
+    "model": "Daytona Chronograph",
+    "price": "$25,000",
+    "image": "Daytona-Chronograph.png",
+    "category": "Chronograph",
+    "material": "Titanium",
+    "description": "Engineered for performance and precision, perfect for adventurers.",
+    "year": 2014
+  },
+  {
+    "id": 2,
+    "brand": "Rolex",
+    "model": "Submariner Blue Bezel Gold",
+    "price": "$12,000",
+    "image": "Submariner-Blue-Bezel-Gold.png",
+    "category": "Vintage",
+    "material": "Stainless Steel",
+    "description": "Modern design meets traditional mechanics in this luxury timepiece.",
+    "year": 2016
+  },
+  {
+    "id": 3,
+    "brand": "Rolex",
+    "model": "Yacht‑Master II Gold",
+    "price": "$18,000",
+    "image": "Yacht‑Master-II-Gold.png",
+    "category": "Vintage",
+    "material": "Stainless Steel",
+    "description": "Minimalist yet bold, designed for both casual and formal wear.",
+    "year": 2016
+  },
+  {
+    "id": 4,
+    "brand": "Rolex",
+    "model": "Black & Gold Chronograph",
+    "price": "$22,000",
+    "image": "Black-Gold-Chronograph.png",
+    "category": "Vintage",
+    "material": "Rubber",
+    "description": "Luxurious aesthetics with a strong and durable build.",
+    "year": 2012
+  },
+  {
+    "id": 5,
+    "brand": "Generic",
+    "model": "Luxury Chronograph Leather Strap",
+    "price": "$3,500",
+    "image": "Luxury-Leather-Strap.png",
+    "category": "Sport",
+    "material": "Leather",
+    "description": "Features a scratch-resistant sapphire crystal and automatic movement.",
+    "year": 2017
+  },
+  {
+    "id": 6,
+    "brand": "IWC",
+    "model": "Automatic Leather Strap",
+    "price": "$4,800",
+    "image": "image1.png",
+    "category": "Casual",
+    "material": "Leather",
+    "description": "Modern design meets traditional mechanics in this luxury timepiece.",
+    "year": 2019
+  },
+  {
+    "id": 7,
+    "brand": "Generic",
+    "model": "Stainless Steel Diver",
+    "price": "$2,800",
+    "image": "image2.png",
+    "category": "Casual",
+    "material": "Rubber",
+    "description": "A classic chronograph that combines utility with sophisticated style.",
+    "year": 2019
+  },
+  {
+    "id": 8,
+    "brand": "Montblanc",
+    "model": "Chronograph Elegance",
+    "price": "$5,200",
+    "image": "image3.png",
+    "category": "Dress",
+    "material": "Leather",
+    "description": "Engineered for performance and precision, perfect for adventurers.",
+    "year": 2023
+  },
+  {
+    "id": 9,
+    "brand": "Generic",
+    "model": "Modern Luxury Black Dial",
+    "price": "$1,500",
+    "image": "image4.png",
+    "category": "Casual",
+    "material": "Carbon Fiber",
+    "description": "A timeless piece with exceptional craftsmanship and elegant design.",
+    "year": 2022
+  },
+  {
+    "id": 10,
+    "brand": "Apple",
+    "model": "Smartwatch Stainless Band",
+    "price": "$500",
+    "image": "image5.png",
+    "category": "Luxury",
+    "material": "Carbon Fiber",
+    "description": "A timeless piece with exceptional craftsmanship and elegant design.",
+    "year": 2014
+  },
+  {
+    "id": 11,
+    "brand": "Rolex",
+    "model": "Daytona Chronograph (alternate)",
+    "price": "$25,000",
+    "image": "Rolex-Deepsea.png",
+    "category": "Dress",
+    "material": "Leather",
+    "description": "A fusion of tech and tradition, with enhanced functionality.",
+    "year": 2024
+  },
+  {
+    "id": 12,
+    "brand": "Rolex",
+    "model": "Submariner (alternate)",
+    "price": "$12,000",
+    "image": "image6.png",
+    "category": "Luxury",
+    "material": "Titanium",
+    "description": "Compact and rugged, suitable for high-impact activities.",
+    "year": 2013
+  },
+  {
+    "id": 13,
+    "brand": "Rolex",
+    "model": "Yacht‑Master II (alternate)",
+    "price": "$18,000",
+    "image": "image7.png",
+    "category": "Diver",
+    "material": "Leather",
+    "description": "A timeless piece with exceptional craftsmanship and elegant design.",
+    "year": 2016
+  },
+  {
+    "id": 14,
+    "brand": "Seiko",
+    "model": "Classic Chronograph",
+    "price": "$1,200",
+    "image": "image8.png",
+    "category": "Chronograph",
+    "material": "Rubber",
+    "description": "Compact and rugged, suitable for high-impact activities.",
+    "year": 2023
+  },
+  {
+    "id": 15,
+    "brand": "Generic",
+    "model": "Vintage Pocket Watch",
+    "price": "$850",
+    "image": "image9.png",
+    "category": "Chronograph",
+    "material": "Gold",
+    "description": "Minimalist yet bold, designed for both casual and formal wear.",
+    "year": 2012
+  },
+  {
+    "id": 16,
+    "brand": "Generic",
+    "model": "Diver Automatic Black Dial",
+    "price": "$2,900",
+    "image": "image10.png",
+    "category": "Smart",
+    "material": "Leather",
+    "description": "A fusion of tech and tradition, with enhanced functionality.",
+    "year": 2011
+  }
+]
