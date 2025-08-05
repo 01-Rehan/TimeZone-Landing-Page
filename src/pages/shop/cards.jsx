@@ -1,15 +1,19 @@
-import React from 'react'
-import WatchFilter from './filter'
+import React from "react";
+// import WatchFilter from './filter'
 
-const Cards = ({product}) => {
+const Cards = ({ product }) => {
   return (
-     <div className=" text-white p-4 rounded-lg shadow">
-      <img src={product.image} alt={product.name} className="w-full h-40 object-cover rounded mb-2" />
+    <div className=" text-white p-4 rounded-lg shadow">
+      <img
+        src={`/TimeZone-Landing-Page/assets/watchPics/${product.image}`}
+        alt={product.name}
+        className="h-50 w-30  sm:h-80 sm:w-50 object-cover rounded mb-2"
+      />
       <h3 className="font-bold text-lg">{product.name}</h3>
       <p className="text-sm">{product.brand}</p>
-      <p className="text-sm text-gray-500">₹{product.price}</p>
+      <p className="text-sm text-gray-500">{product.price}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Cards
+export default Cards;
