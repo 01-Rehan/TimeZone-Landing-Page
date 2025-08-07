@@ -5,6 +5,7 @@ import { Home } from "./pages/Home/home";
 import { FooterComponent } from "./components/footer/footer";
 import { CursorEffect } from "./components/Cursor/cursor";
 import { AppRouter } from "./router/AppRouter";
+import { Auth } from "./router/Auth";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Navbar />
         <AppRouter />
       <FooterComponent />
+      <Auth />
     </>
   );
 };
