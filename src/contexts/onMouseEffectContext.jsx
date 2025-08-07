@@ -3,11 +3,11 @@ import { createContext, useRef, useContext } from "react";
 const CursorHoverContext = createContext(null);
 
 export function CursorHoverProvider({ children }) {
-  const hoverRefs = useRef([]);
+  const hoverRefs = useRef(new Set());
 
   function registerHoverRef(ref) {
-    if (ref && !hoverRefs.current.includes(ref)) {
-      hoverRefs.current.push(ref);
+    if (ref && !hoverRefs.current.has(ref)) {
+      hoverRefs.current.add(ref);
     }
   }
 

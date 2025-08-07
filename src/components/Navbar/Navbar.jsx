@@ -8,15 +8,9 @@ export const Navbar = () => {
   const [isMenuOpen, setNavOption] = useState(false);
 
   const { registerHoverRef } = useCursorEffect();
-
+  
   const navItems = ["Home", "Shop", "About", "Blog", "Contact"];
   const navRefs = useRef(navItems.map(() => createRef()));
-  useEffect(() => {
-    navRefs.current.forEach((ref) => {
-      if (ref.current) registerHoverRef(ref.current);
-    });
-  }, [registerHoverRef]);
-
   const navIconsImage = [
     "./assets/SVGs/Icons/search-01.svg",
     "./assets/SVGs/Icons/user-circle.svg",
@@ -24,11 +18,16 @@ export const Navbar = () => {
   ];
   const navIconRefs = useRef(navIconsImage.map(() => createRef()));
   useEffect(() => {
+    navRefs.current.forEach((ref) => {
+      if (ref.current) registerHoverRef(ref.current);
+    });
     navIconRefs.current.forEach((ref) => {
       if (ref.current) registerHoverRef(ref.current);
     });
+
   }, [registerHoverRef]);
 
+  
   return (
     <>
       <nav className="w-full h-16 bg-black  px-4 sm:px-16 flex items-center justify-between z-20">
@@ -57,22 +56,20 @@ export const Navbar = () => {
                     }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div
-                      className="absolute bounde w-full h-full hover:scale-150 "
-                      ref={navRefs.current[index]}
-                    />
-                    {item}
+                    <div className="absolute bounde w-full h-full hover:scale-150 z-0 " />
+                    <span ref={navRefs.current[index]} className="z-1">{item}</span>
+
                     <motion.div
-                        layout
-                        className="absolute  bottom-0  h-[2px] bg-red-700 rounded-full"
-                        initial={{ width: 0, opacity: 0 }}
-                        animate={
-                          isActive
-                            ? { width: "100%", opacity: 1 }
-                            : { width: 0, opacity: 0 }
-                        }
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                      />
+                      layout
+                      className="absolute  bottom-0  h-[2px] bg-red-700 rounded-full"
+                      initial={{ width: 0, opacity: 0 }}
+                      animate={
+                        isActive
+                          ? { width: "100%", opacity: 1 }
+                          : { width: 0, opacity: 0 }
+                      }
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    />
                   </motion.li>
                 )}
               </NavLink>
@@ -86,15 +83,14 @@ export const Navbar = () => {
               className="searchIcon relative w-7 h-7 mix-blend-difference m-1"
               key={index}
             >
-              <div
-                className="absolute bounde w-full h-full hover:scale-150 "
-                ref={navIconRefs.current[index]}
-              />
-              <img
-                src={image}
-                className=" w-full h-full pointer-events-none"
-                alt=""
-              />
+              <span ref={navIconRefs.current[index]}>
+                <div className="absolute bounde w-full h-full hover:scale-150 " />
+                <img
+                  src={image}
+                  className=" w-full h-full pointer-events-none"
+                  alt=""
+                />
+              </span>
             </span>
           ))}
 

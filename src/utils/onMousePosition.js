@@ -6,7 +6,7 @@ export default function useMousePosition({ hoverRefs }) {
   const x = useMotionValue(-100);
   const scale = useMotionValue(1);
   const [hoveredElement, setHoveredElement] = useState(null);
-  
+
   // Track previous mouse position and timestamp for velocity calculation
   const prevPosition = useRef({ x: 0, y: 0, timestamp: Date.now() });
   const velocityRef = useRef(0);
@@ -21,32 +21,44 @@ export default function useMousePosition({ hoverRefs }) {
   const baseCursorSize = hoveredElement ? 50 : 30;
   const cursorSize = baseCursorSize;
 
-  function updateMousePosition({ clientX, clientY }) {
+  function updateMousePosition(e) {
+    const { clientX, clientY } = e;
+
+    const hoveredElement = [...hoverRefs.current].find((ref) => {
+      return ref && ref.contains(e.target);
+    });
+
+    if (hoveredElement) {
+      setHoveredElement(hoveredElement);
+    } else {
+      setHoveredElement(null);
+    }
+
     const currentTime = Date.now();
     const deltaTime = currentTime - prevPosition.current.timestamp;
-    
+
     // Calculate distance moved
     const deltaX = clientX - prevPosition.current.x;
     const deltaY = clientY - prevPosition.current.y;
     const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-    
+
     // Calculate velocity (pixels per millisecond, then convert to pixels per second)
     const velocity = deltaTime > 0 ? (distance / deltaTime) * 1000 : 0;
     velocityRef.current = velocity;
-    
+
     // Apply squeeze based on velocity
     // Higher velocity = more squeeze (smaller scale)
     // Adjust these values to fine-tune the effect:
     const maxVelocity = 3000; // Max velocity to consider for scaling
     const minScale = 0.6; // Minimum scale when moving fast
     const maxScale = 1.2; // Maximum scale when moving slow/stationary
-    
+
     // Normalize velocity and invert it (fast movement = small scale)
     const normalizedVelocity = Math.min(velocity / maxVelocity, 1);
-    const targetScale = maxScale - (normalizedVelocity * (maxScale - minScale));
-    
+    const targetScale = maxScale - normalizedVelocity * (maxScale - minScale);
+
     scale.set(targetScale);
-    
+
     // Update cursor position
     if (hoveredElement) {
       const { top, left, width, height } =
@@ -60,7 +72,7 @@ export default function useMousePosition({ hoverRefs }) {
       x.set(clientX - cursorSize / 2);
       y.set(clientY - cursorSize / 2);
     }
-    
+
     // Update previous position and timestamp
     prevPosition.current = { x: clientX, y: clientY, timestamp: currentTime };
   }
@@ -78,44 +90,24 @@ export default function useMousePosition({ hoverRefs }) {
   });
 
   useEffect(() => {
+    if (!hoverRefs || !hoverRefs.current || hoverRefs.current.length === 0)
+      return;
     const elements = hoverRefs?.current;
 
-    if (!elements) {
-      console.log("No elements found");
-      return;
-    }
-
-    const handleMouseEnter = (e) => {
-      setHoveredElement(e.target);
-    };
     
-    const handleMouseLeave = (e) => {
-      setHoveredElement(null);
-    };
-
-    elements.forEach((el) => {
-      el.addEventListener("mouseover", handleMouseEnter);
-      el.addEventListener("mouseleave", handleMouseLeave);
-    });
-
     window.addEventListener("mousemove", updateMousePosition);
 
     return () => {
-      window.removeEventListener("mousemove", updateMousePosition, {passive:true});
-      
-      elements.forEach((el) => {
-        el.removeEventListener("mouseover", handleMouseEnter);
-        el.removeEventListener("mouseleave", handleMouseLeave);
-      });
+      window.removeEventListener("mousemove", updateMousePosition,);
     };
   }, [hoverRefs, cursorSize]);
 
-  return { 
-    x: SpringX, 
-    y: SpringY, 
+  return {
+    x: SpringX,
+    y: SpringY,
     scale: SpringScale,
-    cursorSize, 
+    cursorSize,
     hoveredElement,
-    velocity: velocityRef.current // Optional: return velocity for debugging
+    velocity: velocityRef.current, // Optional: return velocity for debugging
   };
 }
