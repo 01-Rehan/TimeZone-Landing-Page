@@ -85,7 +85,7 @@ export const Navbar = () => {
             <span ref={search}>
               <div className="absolute bounde w-full h-full hover:scale-150 " />
               <img
-                src="./assets/SVGs/Icons/search-01.svg"
+                src="/TimeZone-Landing-Page/assets/SVGs/Icons/search-01.svg"
                 className=" w-full h-full pointer-events-none"
                 alt=""
               />
@@ -96,7 +96,7 @@ export const Navbar = () => {
             <span ref={user} onClick={() => setUserMenu(!isUserMenu)}>
               <div className="absolute bounde w-full h-full hover:scale-150 " />
               <img
-                src="./assets/SVGs/Icons/user-circle.svg"
+                src="/TimeZone-Landing-Page/assets/SVGs/Icons/user-circle.svg"
                 className=" w-full h-full pointer-events-none"
                 alt=""
               />
@@ -109,7 +109,7 @@ export const Navbar = () => {
             <span ref={cart} onClick={() => setCartMenu(!isCartMenu)}>
               <div className="absolute bounde w-full h-full hover:scale-150 " />
               <img
-                src="./assets/SVGs/Icons/shopping-cart-01.svg"
+                src="/TimeZone-Landing-Page/assets/SVGs/Icons/shopping-cart-01.svg"
                 className=" w-full h-full pointer-events-none"
                 alt=""
               />

@@ -1,7 +1,5 @@
 import axios from "axios";
 
-
-
 async function fetchWatches() {
   try {
     const response = await axios.get('/TimeZone-Landing-Page/luxury_watch_data.json');

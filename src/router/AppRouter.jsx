@@ -7,6 +7,7 @@ import { Blog } from "../pages/blog/Blog";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Inner from "../utils/Inner";
+import ProductPage from "../pages/ProductPage/ProductPage";
 
 export const AppRouter = () => {
   const location = useLocation();
@@ -18,6 +19,7 @@ export const AppRouter = () => {
         <Route path="/shop" element={<Inner><Shop /></Inner>} />
         <Route path="/contact" element={<Inner><Contact /></Inner>} />
         <Route path="/blog" element={<Inner><Blog /></Inner>} />
+        <Route path="/product/:id" element={<ProductPage/>} />
       </Routes>
     </AnimatePresence>
   );
