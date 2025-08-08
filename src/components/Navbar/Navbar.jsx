@@ -3,6 +3,7 @@ import { useCursorEffect } from "../../contexts/onMouseEffectContext";
 import { motion, AnimatePresence } from "framer-motion";
 import Hamburger from "hamburger-react";
 import { Link, NavLink } from "react-router-dom";
+import Auth from "../Auth/Auth";
 
 export const Navbar = () => {
   const [isMenuOpen, setNavOption] = useState(false);
@@ -186,60 +187,7 @@ export const Navbar = () => {
             transition={{ duration: 0.5, type: "spring" }}
             className=" absolute right-0 w-11/12 sm:w-100 h-max z-20 flex flex-col p-4 m-1 origin-top sm:origin-top-right bg-zinc-800 text-white"
           >
-
-            {/* logged users */}
-
-            {/* <div className="logged">
-              <div className="head w-full h-max flex items-center gap-2">
-                <img
-                  src="./assets/SVGs/Icons/user-circle.svg"
-                  className=" w-max h-10 pointer-events-none"
-                  alt=""
-                />
-                <div className="head-text flex flex-col">
-                  <span className="Name font-bold">Hello, Rehan</span>
-                  <span className="text-sm hover:font-bold transition-all">
-                    account settings
-                  </span>
-                </div>
-              </div>
-            </div> */}
-
-
-            {/* for user who is not logged in  */}
-
-            <div className="Unknown w-full h-max p-2 flex gap-5 flex-col">
-              <div className="notLogged ">You are not logged in</div>
-              <div className="AuthButtons w-full h-max flex items-center justify-between ">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <Link
-                    to="/login"
-                    className="px-5 py-2 rounded-lg bg-white text-black font-semibold shadow hover:bg-gray-200 transition-all"
-                  >
-                    Login
-                  </Link>
-                </motion.div>
-                <span>New user?</span>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <Link
-                    to="/register"
-                    className="px-5 py-2 rounded-lg bg-red-600 text-white font-semibold shadow hover:bg-red-700 transition-all"
-                  >
-                    Register
-                  </Link>
-                </motion.div>
-              </div> 
-            </div>
-
-
+            <Auth />
           </motion.div>
         )}
       </AnimatePresence>

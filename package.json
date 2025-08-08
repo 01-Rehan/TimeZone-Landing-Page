@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^2.4.0",
     "@tailwindcss/vite": "^4.1.11",
     "axios": "^1.11.0",
     "framer-motion": "^12.23.12",
