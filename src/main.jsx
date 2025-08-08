@@ -15,7 +15,10 @@ createRoot(document.getElementById("root")).render(
       <Auth0Provider
         domain={domain}
         clientId={clientId}
-        redirectUri={window.location.origin}
+        authorizationParams={{
+          redirect_uri: "https://01-rehan.github.io/TimeZone-Landing-Page/",
+          postLogoutRedirectUri: "https://01-rehan.github.io/TimeZone-Landing-Page/"
+        }}
       >
         <CursorHoverProvider>
           <App />
