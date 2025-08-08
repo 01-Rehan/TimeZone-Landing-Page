@@ -20,7 +20,7 @@ export const Shop = () => {
                 <FilteredItems onDataLoaded={setFilteredProducts} />
               </div>
 
-              <div className="itemCon flex flex-wrap justify-center gap-5">
+              <div className="itemCon flex flex-wrap justify-center ">
                 {filteredProducts.length > 0 ? (
                   filteredProducts.map((product) => (
                     <Cards key={product.id} product={product} />
